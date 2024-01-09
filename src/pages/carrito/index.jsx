@@ -34,7 +34,7 @@ const Carrito = () => {
   return (
     <LightTheme mobileappstyle>
       <Navbar nr={navbarRef} lr={logoRef} theme="themeL" />
-      <ContactHeader blackStar />
+
       <div className="main-content">
         <CartComponent setModal={setModal} />
         <FooterArch />

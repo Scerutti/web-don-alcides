@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar/navbar";
 import AboutUs from "../components/About-us/about-us";
-import Works from "../components/Works/works";
 import Blogs1 from "../components/blogs/Blogs1/blogs1";
 import appData from "../data/app.json";
 import LightTheme from "../layouts/Light";
 import Intro5 from "../components/Intro5/intro5";
 import FooterArch from "../components/Footer-arch/footer-arch";
+import Works2 from "../components/Works2/works2";
+import products from "../data/products.json";
 
 const Home = () => {
   const fixedSlider = React.useRef(null);
@@ -44,7 +45,7 @@ const Home = () => {
     <LightTheme mobileappstyle>
       <Navbar nr={navbarRef} lr={logoRef} />
       <Intro5 />
-      <Works />
+      <Works2 productsFeat={products} />
       <Blogs1 />
       <AboutUs />
       <FooterArch />

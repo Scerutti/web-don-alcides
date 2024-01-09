@@ -13,8 +13,8 @@ const ShopSidebar = () => {
         "--range-progress",
         `calc(${newValue}% + (${newPosition}px))`
       );
-      let a = range.value
-      range.value = a
+      let a = range.value;
+      range.value = a;
     };
   React.useEffect(() => {
     setValue(document.querySelector("#range"));
@@ -32,44 +32,6 @@ const ShopSidebar = () => {
                 </button>
               </div>
             </form>
-          </div>
-        </div>
-
-        <div className="col-lg-12 col-md-6">
-          <div className="box gat mb-30">
-            <h6 className="title mb-30">Category</h6>
-            <ul>
-              <li>
-                <a href="#0">
-                  App Design <span>05</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  Development <span>03</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  Web Design <span>07</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  Dashboard <span>04</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  Logo Design <span>09</span>
-                </a>
-              </li>
-              <li>
-                <a href="#0">
-                  Branding <span>14</span>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
 
