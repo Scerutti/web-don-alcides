@@ -1,7 +1,7 @@
 [
   {
     "_id": "1",
-    "name": "Producto",
+    "name": "Producto asdasd",
     "price": 1234,
     "description": "producto descripcion",
     "image": "/img/mobile-app/shop/1.jpg"
@@ -36,48 +36,6 @@
   },
   {
     "_id": "6",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "7",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "8",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "9",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "10",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "11",
-    "name": "Producto",
-    "price": 1234,
-    "description": "producto descripcion",
-    "image": "/img/mobile-app/shop/1.jpg"
-  },
-  {
-    "_id": "12",
     "name": "Producto",
     "price": 1234,
     "description": "producto descripcion",

@@ -1,8 +1,16 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
-import products from "../../data/products.json";
 
-const ShopStore = () => {
+const ShopStore = ({
+  products,
+  totalProducts,
+  nextHandler,
+  prevHandler,
+  currentPage,
+  handleSort,
+  setSearch,
+  handleSearchBar,
+}) => {
   const [showModal, setShowModal] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState(null);
   const [quantity, setQuantity] = React.useState(1);
@@ -28,11 +36,15 @@ const ShopStore = () => {
           <div className="form-group d-flex align-items-center">
             <input
               type="text"
+              onChange={(e) => setSearch(e.target.value)}
               name="shop-search"
               className="form-control"
               placeholder="Search"
+              onKeyDown={(e) =>
+                e.key === "Enter" ? handleSearchBar() : undefined
+              }
             />
-            <button className="btn btn-danger ml-2">
+            <button className="btn btn-danger ml-2" onClick={handleSearchBar}>
               <span className="icon pe-7s-search"></span>
             </button>
           </div>
@@ -42,7 +54,7 @@ const ShopStore = () => {
         <div className="row text-center">
           <div className="col-lg-4 valign">
             <div className="result-text">
-              <span> 12 of 30 Results</span>
+              <span> mostrando 6 de {totalProducts}</span>
             </div>
           </div>
           <div className="col-lg-8 d-flex justify-content-end">
@@ -50,10 +62,11 @@ const ShopStore = () => {
               <select
                 className="form-select"
                 aria-label="Default select example"
+                onChange={(e) => handleSort(e.target.value)}
               >
                 <option defaultValue>Ordenar por precio</option>
-                <option value="1">Ordenar de mayor a menor</option>
-                <option value="2">Ordenar de menor a mayor</option>
+                <option value="asc">Ordenar de menor a mayor</option>
+                <option value="desc">Ordenar de mayor a menor</option>
               </select>
             </div>
           </div>
@@ -64,7 +77,7 @@ const ShopStore = () => {
           <div key={p._id} className="col-lg-4 col-md-6">
             <div className="item">
               <div className="img">
-                <img src="/img/mobile-app/shop/1.jpg" alt="" />
+                <img src={p.image} alt="" />
 
                 <div className="add">
                   <a
@@ -83,9 +96,30 @@ const ShopStore = () => {
           </div>
         ))}
       </div>
+      <div className="text-center mt-30">
+        <div className="pagination justify-content-center">
+          <span
+            onClick={prevHandler}
+            className="pagination-arrow"
+            style={{ cursor: "pointer" }}
+          >
+            <i className="fas fa-angle-left"></i>
+          </span>
+          <span className="pagination-number active">
+            <a>{currentPage + 1}</a>
+          </span>
+          <span
+            onClick={nextHandler}
+            className="pagination-arrow"
+            style={{ cursor: "pointer" }}
+          >
+            <i className="fas fa-angle-right"></i>
+          </span>
+        </div>
+      </div>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Body>
-          <img src="/img/mobile-app/shop/1.jpg" alt="" />
+          <img src={selectedProduct?.image} alt="" />
           <h4>{selectedProduct?.name}</h4>
           <p>{selectedProduct?.description}</p>
           <p>Precio: ${selectedProduct?.price}</p>
